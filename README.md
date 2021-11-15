@@ -1,7 +1,9 @@
 # intellij_ultimate_week03
 
-|제목|내용|설명|
-|------|---|---|
-|테스트1|테스트2|테스트3|
-|테스트1|테스트2|테스트3|
-|테스트1|테스트2|테스트3|
+|기능|Method|Url|Return|
+|------|------|------|-----|
+|메모생성하기|POST|/api/memos|Memo|
+|메모조회하기|GET|/api/memos|List<Memo>|
+|메모변경하기|PUT|/api/memos/{id}|Long|
+|메모삭제하기|DELETE|/api/memos/{id}|Long|
+
