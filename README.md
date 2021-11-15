@@ -7,29 +7,41 @@
 |메모변경하기|PUT|/api/memos/{id}|Long|
 |메모삭제하기|DELETE|/api/memos/{id}|Long|
 
-<h2>Controller</h2>  
-final MemoRepository  
-final MemoService   
+<h4>Controller</h4>  
+final MemoRepository
+
+final MemoService 
+  
 Post > memoRepository.save  
+  
 Get < findAllByModifiedAtBetweenOrderByModifiedAtDesc  
+                                                     
 Put > update()  
+  
 Delete > memoRepository.deleteById()  
+  
 
-Service  
+<h4>Service</h4>  
 final MemoRepository  
+  
 update(id, requestDto)  
+  
 
-RequestDto  
+<h4>RequestDto</h4>
 MemoRequestDto()  
+  
 private string username  
+  
 private string contents  
 
-memo extends Timestamped  
+<h4>memo extends Timestamped</h4>  
 id, username, contents  
+  
 Memo(requestDto) > username, contents  
+  
 update(requestDto) > username, contents  
   
-Repository(interface) extends JpaRepository  
+<h4>Repository(interface) extends JpaRepository</h4>  
 findAllByModifiedAtBetweenOrderByModifiedAtDesc  
 
 
