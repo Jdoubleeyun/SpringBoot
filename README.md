@@ -1,45 +1,23 @@
 # intellij_ultimate_week04-1
 
-|기능|Method|Url|Return|
-|------|------|------|-----|
-|메모생성하기|POST|/api/memos|Memo|
-|메모조회하기|GET|/api/memos|List<Memo>|
-|메모변경하기|PUT|/api/memos/{id}|Long|
-|메모삭제하기|DELETE|/api/memos/{id}|Long|
+1. SearchController (GET)  
+List<ItemDto> getItems(@RequestParam String query) >  naverShopSearch.fromJSONtoItems(resultString);  
+query를 받아서 NavershopSearch.search{해당 query의 네이버 정보 get}, NavershopSearch.fromJSONtoItems{정보 변수별로 추림} > itemDtoList > ItemDto(title, link, image, lprice)
+  
+2. ProductRestController (GET) > productRepository.findAll()  
+productRepository extends JpaRepository<Product, Long>  
 
-<h4>Controller</h4>  
-final MemoRepository
+2. ProductRestController (POST) requestDto > product  
+ProductRequestDto requestDto 가 들어오면 product(requestDto) > productRepository에 save
+  
+2. ProductRestController (PUT) 
+id, requestDto > productService.update(id, requestDto) > product.update(requestDto) > this.myprice = requestDto.getMyprice()
 
-final MemoService 
-  
-Post > memoRepository.save  
-  
-Get < findAllByModifiedAtBetweenOrderByModifiedAtDesc  
-                                                     
-Put > update()  
-  
-Delete > memoRepository.deleteById()  
-  
 
-<h4>Service</h4>  
-final MemoRepository  
-  
-update(id, requestDto)  
-  
+|기능|Method|Url|Return|function|
+|------|------|------|-----|------|
+|검색어에 대한 정보 생성하기|GET|/api/search @RequestParam|List<ItemDto>|execSearch(), addHTML(itemDto)|
+|관심 상품 목록 조회|GET|/api/products|List<Product>|showProduct(), addProductItem(product)|
+|관심 상품 id등록 modal start|POST|/api/products|Product|addProduct(itemDto)|
+|설정 가격 변경 modal end|PUT|/api/products/{id} or ${targetId}|Long|setMyprice()|
 
-<h4>RequestDto</h4>
-MemoRequestDto()  
-  
-private string username  
-  
-private string contents  
-
-<h4>memo extends Timestamped</h4>  
-id, username, contents  
-  
-Memo(requestDto) > username, contents  
-  
-update(requestDto) > username, contents  
-  
-<h4>Repository(interface) extends JpaRepository</h4>  
-findAllByModifiedAtBetweenOrderByModifiedAtDesc  
