@@ -1,0 +1,238 @@
+
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+
+body {
+    margin: 0px;
+}
+
+.area-edit {
+    display: none;
+}
+
+.wrap {
+    width: 538px;
+    margin: 10px auto;
+}
+
+#see-area, #search-area {
+    width: 538px;
+    margin: 10px auto;
+}
+
+#contents {
+    width: 538px;
+}
+
+.nav {
+    width: 530px;
+    margin: 30px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
+}
+
+.nav div.nav-see{
+    cursor: pointer;
+}
+.modal div.modal-search{
+    cursor: pointer;
+}
+
+.nav div.nav-see.active {
+    font-weight: 1000;
+}
+.modal div.modal-search.active {
+    font-weight: 1000;
+}
+
+.area-write {
+    position: relative;
+    width: 538px;
+}
+
+.area-write img {
+    cursor: pointer;
+    position: absolute;
+    width: 22.2px;
+    height: 18.7px;
+    bottom: 15px;
+    right: 17px;
+}
+
+.background-header {
+    position: fixed;
+    z-index: -1;
+    top: 0px;
+    width: 100%;
+    height: 428px;
+    background-color: #339af0;
+}
+
+.background-body {
+    position: fixed;
+    z-index: -1;
+    top: 428px;
+    height: 100%;
+    width: 100%;
+    background-color: #dee2e6;
+}
+
+.header {
+    margin-top: 50px;
+}
+
+.header h2 {
+    /*font-family: 'Noto Sans KR', sans-serif;*/
+    height: 33px;
+    font-size: 42px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 0.79;
+    letter-spacing: -0.5px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.header p {
+    margin: 40px auto;
+    width: 217px;
+    height: 48px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: -1.12px;
+    text-align: center;
+    color: #ffffff;
+}
+
+textarea.field {
+    width: 502px !important;
+    height: 146px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    border: none;
+    padding: 18px;
+    resize: none;
+}
+
+.field::placeholder {
+    width: 216px;
+    height: 16px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: -0.96px;
+    text-align: left;
+    color: #868e96;
+}
+
+.card {
+    width: 538px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.card .metadata {
+    position: relative;
+    display: flex;
+    font-family: 'Spoqa Han Sans';
+    font-size: 11px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: -0.77px;
+    text-align: left;
+    color: #adb5bd;
+    height: 14px;
+    padding: 10px 23px;
+}
+
+.card .metadata .date {
+
+}
+
+.card .metadata .username {
+    margin-left: 20px;
+}
+
+.contents {
+    padding: 0px 23px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+#see-area {
+    margin-top: 12px;
+}
+
+
+.popup-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-container.active {
+    display: flex;
+}
+
+.popup {
+    padding: 20px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    width: 370px;
+    height: 190px;
+    border-radius: 11px;
+    background-color: #ffffff;
+}
+
+.popup .metadata {
+    margin: 0px;
+    font-size: 22px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: -1.1px;
+    color: #000000;
+}
+
+.popup .contents {
+    width: 330px;
+    height: 39px;
+    border-radius: 2px;
+    border: solid 1.1px #dee2e6;
+    margin-right: 9px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+
+.popup button.close {
+    position: absolute;
+    cursor: pointer;
+    top: 15px;
+    right: 15px;
+    color: #adb5bd;
+    background-color: #fff;
+    font-size: 19px;
+    border: none;
+}
+.none {
+    display: none;
+}

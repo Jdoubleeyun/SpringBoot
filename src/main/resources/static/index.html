@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeline Service</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+<div class="background-header">
+
+</div>
+<div class="background-body">
+
+</div>
+<div class="wrap">
+    <div class="header">
+        <h2>Timeline Service</h2>
+        <p>
+            공유하고 싶은 소식을 입력해주세요.
+            24시간이 지난 뒤에는 사라집니다.
+        </p>
+    </div>
+    <div class="nav">
+        <div onclick="getMessages()" class="nav-see">
+            글쓰기
+        </div>
+    </div>
+    <div id = "main-area" class="area-write">
+        <div class="mb-3 row">
+            <label for="exampleFormControlInput1" class="col-sm-2 col-form-label">작성자명</label>
+            <div class="col-sm-10">
+                <input class="field" type="text" id="exampleFormControlInput1" placeholder="작성자명을 입력해주세요">
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="exampleFormControlInput2" class="col-sm-2 col-form-label">제목</label>
+            <div class="col-sm-10">
+                <input class="field" type="text"  id="exampleFormControlInput2" placeholder="제목을 입력해주세요">
+            </div>
+        </div>
+        <textarea class="field" placeholder="게시글을 입력해주세요" name="contents" id="contents" cols="30"
+                  rows="10"></textarea>
+        <!--            <button class="btn btn-danger" onclick="writePost()">작성하기</button>-->
+        <button onclick="writePost()" type="button" class="icon-end-edit btn btn-outline-success">글쓰기</button>
+<!--        <img src="images/send.png" alt="" onclick="writePost()">-->
+    </div>
+</div>
+<div id="see-area">
+    <div id="cards-box" class="area-read ">
+        <div class="card">
+            <h1>전체 게시글</h1>
+            <p>최저가를 설정해두면 선택하신 상품의 최저가가 떴을 때<br/> 표시해드려요!</p>
+            <!-- date/username 영역 -->
+            <div class="metadata">
+                <div class="date">
+                    October 10, 2020
+                </div>
+                <div id="1-username" class="username">
+                    anonymous
+                </div>
+            </div>
+            <!-- contents 조회/수정 영역-->
+            <div class="contents">
+                <div id="1-contents" class="text">
+                    dsafnkalfklewakflekelafkleajfkleafkldsankflenwaklfnekwlafneklwanfkelawnfkelanfkleanfklew
+                </div>
+            </div>
+            <div class ="modal">
+                <div id="1-submit" onclick="execSearch('1')" class="modal-search">
+                    글 자세히보기
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="search-area" class="pop">
+    <div id="container" class="popup-container">
+        <div class="popup">
+            <button id="close" class="close">
+                X
+            </button>
+            <div class="metadata">
+                <div>게시글의 제목이 들어갑니다.</div>
+                <div>게시글의 작성자명이 들어갑니다.</div>
+                <div>게시글의 날짜가 들어갑니다.</div>
+            </div>
+            <div class="contents">
+                <div>게시글의 내용이 들어갑니다.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
