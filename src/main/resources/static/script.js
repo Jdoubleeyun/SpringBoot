@@ -13,6 +13,9 @@ $(document).ready(function () {
         $('#main-area').hide();
         console.log("들어옴1");
     })
+    $('.background-headertitle').on('click', function () {
+        window.location.reload();
+    })
     $('#see-area').hide();
     $('#main-area').show();
 
@@ -59,29 +62,28 @@ function getMessages() {
 function addHTML(id, username, title,  contents, modifiedAt) {
 // 1. HTML 태그를 만듭니다.
     let tempHtml = `<div class="card">
-            <h1>전체 게시글</h1>
-            <p>최저가를 설정해두면 선택하신 상품의 최저가가 떴을 때<br/> 표시해드려요!</p>
-            <!-- date/username 영역 -->
-            <div class="metadata">
-                <div class="date">
-                    ${modifiedAt}
-                </div>
-                <div id="${id}-username" class="username">
-                    ${username}
-                </div>
-            </div>
-            <!-- contents 조회/수정 영역-->
-            <div class="contents">
-                <div id="${id}-contents" class="text">
-                    ${contents}
-                </div>
-            </div>
-            <div class ="modal">
-                <div onclick="execSearch('${id}')" id="${id}-submit" class="modal-search">
-                글 자세히보기
-                </div>
-            </div>
-        </div>`;
+                        <!-- date/username 영역 -->
+                        <div class="metadata">
+                            <div class="date">
+                                ${modifiedAt}
+                            </div>
+                            <div id="${id}-username" class="username">
+                                ${username}
+                            </div>
+                        </div>
+                        <div class="title">
+                            <div id="${id}-title" class="text">
+                                ${title}
+                            </div>
+                        </div>
+                        <div class ="modal">
+                            <div onclick="execSearch('${id}')" id="${id}-submit" class="modal-search">
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-arrow-bar-up" viewBox="0 0 16 16">
+                                     <path fill-rule="evenodd" d="M8 10a.5.5 0 0 0 .5-.5V3.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 3.707V9.5a.5.5 0 0 0 .5.5zm-7 2.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z"/>
+                                 </svg>
+                            </div>
+                        </div>
+                    </div>`;
     // 2. #cards-box 에 HTML을 붙인다.
     $('#cards-box').append(tempHtml);
 }
@@ -154,9 +156,9 @@ function addProduct(itemDto) {
                         X
                     </button>
                     <div class="metadata">
-                        <div>${itemDto.title}</div>
-                        <div>${itemDto.username}</div>
-                        <div>${itemDto.modifiedAt}</div>
+                        <div class="popup_title">${itemDto.title}</div>
+                        <div class="popup_username">${itemDto.username}</div>
+                        <div class="popup_date">${itemDto.modifiedAt}</div>
                     </div>
                     <div class="contents">
                         <div>${itemDto.contents}</div>

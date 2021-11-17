@@ -3,61 +3,7 @@
 
 body {
     margin: 0px;
-}
 
-.area-edit {
-    display: none;
-}
-
-.wrap {
-    width: 538px;
-    margin: 10px auto;
-}
-
-#see-area, #search-area {
-    width: 538px;
-    margin: 10px auto;
-}
-
-#contents {
-    width: 538px;
-}
-
-.nav {
-    width: 530px;
-    margin: 30px auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    cursor: pointer;
-}
-
-.nav div.nav-see{
-    cursor: pointer;
-}
-.modal div.modal-search{
-    cursor: pointer;
-}
-
-.nav div.nav-see.active {
-    font-weight: 1000;
-}
-.modal div.modal-search.active {
-    font-weight: 1000;
-}
-
-.area-write {
-    position: relative;
-    width: 538px;
-}
-
-.area-write img {
-    cursor: pointer;
-    position: absolute;
-    width: 22.2px;
-    height: 18.7px;
-    bottom: 15px;
-    right: 17px;
 }
 
 .background-header {
@@ -65,52 +11,112 @@ body {
     z-index: -1;
     top: 0px;
     width: 100%;
-    height: 428px;
-    background-color: #339af0;
-}
+    height: 800px;
+    background-color: #ADD8E6;
 
+}
 .background-body {
     position: fixed;
     z-index: -1;
-    top: 428px;
+    top: 703px;
     height: 100%;
     width: 100%;
-    background-color: #dee2e6;
+    background-color: #808080;
 }
-
-.header {
-    margin-top: 50px;
+.background-headerimg{
+    position: fixed;
+    z-index: -1;
+    top: 0px;
+    width: 100%;
+    height: 800px;
+    background-image: url("images/building3.png");
+    background-repeat: no-repeat;
+    background-size: 30% 77%;
+    background-position: right top;
+    background-attachment: fixed;
+    background-color: transparent;
 }
-
-.header h2 {
+.background-headertitle{
+    margin-top: 240px;
+    margin-left: 30px;
+    transition: color 0.5s;
+    cursor: pointer;
+    color: #ffffff;
+    transition: color 0.5s ease-in-out;
+}
+.background-headertitle:hover{
+    color: #424242;
+}
+.background-headertitle h2 {
     /*font-family: 'Noto Sans KR', sans-serif;*/
+    display: block;
+    width: 10px;
     height: 33px;
-    font-size: 42px;
-    font-weight: 500;
+    font-size: 80px;
+    font-weight: 900;
     font-stretch: normal;
     font-style: normal;
     line-height: 0.79;
     letter-spacing: -0.5px;
-    text-align: center;
-    color: #ffffff;
+    text-align: left;
+    margin-left: 20px;
+}
+.fix-wrap{
+    display: flex;
+}
+.wrap {
+    display: block;
+    width: 538px;
+    margin: 10px 700px;
+    padding: 30px;
+}
+.header {
+    margin-top: 50px;
 }
 
 .header p {
-    margin: 40px auto;
-    width: 217px;
+    margin: 0px auto 80px;
+    width: 450px;
     height: 48px;
     font-family: 'Noto Sans KR', sans-serif;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
     line-height: 1.5;
     letter-spacing: -1.12px;
     text-align: center;
-    color: #ffffff;
+    color: #424242;
+}
+
+
+#see-area, #search-area {
+    display: block;
+    width: 538px;
+    margin: 10px auto;
+}
+.area-write {
+    position: relative;
+    width: 538px;
+}
+.mb-3-row{
+    margin-bottom: 13px;
+}
+.field{
+    width: 200px;
+    height: 20px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    border: none;
+    resize: none;
+    box-shadow: 2px 2px 2px 2px grey;
+}
+#contents {
+    width: 538px;
 }
 
 textarea.field {
+    margin-top: 12px;
     width: 502px !important;
     height: 146px;
     border-radius: 5px;
@@ -118,6 +124,7 @@ textarea.field {
     border: none;
     padding: 18px;
     resize: none;
+    box-shadow: 2px 2px 2px 2px grey;
 }
 
 .field::placeholder {
@@ -134,27 +141,87 @@ textarea.field {
     color: #868e96;
 }
 
+.wrap button{
+    width: 538px;
+    color: #ffffff;
+    font-size: large;
+    background-color: #868e96;
+    margin: 10px auto;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 2px 2px 2px 2px grey;
+    transition: background-color 0.5s ease-in-out;
+    cursor: pointer;
+}
+.wrap button:hover{
+    background-color: #424242;
+}
+.nav {
+    width: 300px;
+    margin: 30px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
+    color: #868e96;
+    background-color: #ffffff;
+    font-size: large;
+    padding: 10px;
+    box-shadow: 2px 2px 2px 2px grey;
+    transition: color 0.5s ease-in-out,
+            background-color 0.5s ease-in-out;
+}
+.nav:hover{
+    color: #ffffff;
+    background-color: #424242;
+}
+
+.nav div.nav-see{
+    cursor: pointer;
+}
+.modal div.modal-search{
+    cursor: pointer;
+}
+
+.nav div.nav-see.active {
+    font-weight: 1000;
+
+}
+.modal div.modal-search.active {
+    font-weight: 1000;
+}
+
+#see-area {
+    width: 538px;
+    margin: 10px auto;
+}
+.area-read {
+    width: 538px;
+}
 .card {
     width: 538px;
     border-radius: 5px;
     background-color: #ffffff;
     margin-bottom: 12px;
+    box-shadow: 2px 2px 2px 2px grey;
 }
 
 .card .metadata {
     position: relative;
     display: flex;
     font-family: 'Spoqa Han Sans';
-    font-size: 11px;
+    font-size: 13px;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
     line-height: 1;
     letter-spacing: -0.77px;
     text-align: left;
-    color: #adb5bd;
+    color: #424242;
     height: 14px;
-    padding: 10px 23px;
+    padding: 17px 30px;
 }
 
 .card .metadata .date {
@@ -163,18 +230,37 @@ textarea.field {
 
 .card .metadata .username {
     margin-left: 20px;
+    color: darkblue;
 }
 
-.contents {
+.title {
+    font-size: 20px;
+    color: #424242;
     padding: 0px 23px;
     word-wrap: break-word;
     word-break: break-all;
+    font-weight: bold;
 }
 
-#see-area {
-    margin-top: 12px;
+.modal{
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    color: #808080;
+    line-height: 1;
+    letter-spacing: -0.77px;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 5px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    transition: background-color 0.5s ease-in-out,
+                color 0.5s ease-in-out;
 }
-
+.modal:hover{
+    color: #ffffff;
+    background-color: #808080;
+}
 
 .popup-container {
     display: none;
@@ -196,31 +282,42 @@ textarea.field {
     padding: 20px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
     position: relative;
-    width: 370px;
+    width: 420px;
     height: 190px;
     border-radius: 11px;
     background-color: #ffffff;
 }
 
 .popup .metadata {
-    margin: 0px;
-    font-size: 22px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1;
     letter-spacing: -1.1px;
-    color: #000000;
+}
+
+.popup .metadata div{
+    margin-bottom: 8px;
+}
+.popup_title{
+    font-size: 25px;
+    font-weight: bold;
+    color: #212121;
+}
+.popup_username{
+    font-size: 15px;
+    color: darkblue;
+    font-weight: bold;
+}
+.popup_date{
+    font-size: 15px;
+    color: #212121;
 }
 
 .popup .contents {
-    width: 330px;
-    height: 39px;
+    width: 395px;
+    height: 100px;
     border-radius: 2px;
-    border: solid 1.1px #dee2e6;
-    margin-right: 9px;
-    margin-bottom: 10px;
+    border: solid 3px #dee2e6;
     padding-left: 10px;
+    padding-right: 10px;
 }
 
 .popup button.close {
