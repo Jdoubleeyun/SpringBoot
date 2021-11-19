@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>2호선 뭐먹지?</title>
+    <!--    제이쿼리 및 부트스트랩    -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"/>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+    <!--      meta date      -->
+    <meta property="og:title" content="2호선 뭐먹지?"/>
+    <meta property="og:description" content="'2호선 뭐먹지?'에서 맛집을 찾아드립니다."/>
+    <meta property="og:image" content="{{ url_for('static', filename='subway.png') }}"/>
+
+    <!--    main css    -->
+    <link rel="stylesheet" href="../static/css/main.css"/>
+
+    <!--    구글폰트    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
+
+    <script>
+        // // 각 역별 value값을 받아서 onclick 이벤트에 할당 ->>페기
+        // $(document).ready(function () {
+        //     $('.line_btn').click(function () {
+        //         let lines = $(this).attr('value');
+        //         let line_name = "/shop/" + lines + "역"
+        //         console.log(line_name)
+        //         document.getElementsByClassName("line_btn").onclick = location.href = line_name
+        //     });
+        // })
+    </script>
+</head>
+<body>
+<!--      Choice page      -->
+<h1 class="logo" style="padding-top: 50px;">
+    <!--  버튼을 누르면 모든식당리스르틀 송출합니다.  -->
+    <button onclick="location.href='/shop'" id="home" type="button"><i style="font-size: 100px">2호선, 뭐먹지?</i></button>
+</h1>
+<div id="choice_box">
+    <div class="line_box">
+    </div>
+    <!-- stations 는 db.restaurant 에서 place를 가져온 리스트입니다. -->
+    <!-- stations리스트에서 포문을 돌려 자동으로 역을 출력해 역 갯수만큼 버튼을 자동생성합니다. -->
+    {%for station in stations %}
+    <div class="line_box">
+        <button onclick="location.href='/shop/{{station}}'" id="line_btn" type="button">{{station}}</button>
+    </div>
+    {% endfor %}
+    <div class="line_box">
+    </div>
+
+</div>
+</body>
+</html>
