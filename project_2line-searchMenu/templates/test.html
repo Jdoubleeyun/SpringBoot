@@ -1,0 +1,129 @@
+<!-- review 파일로 대체하였습니다. -->
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="ko">-->
+<!--    <head>-->
+<!--        <meta charset="UTF-8"/>-->
+<!--        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>-->
+<!--        <title>{{ word }} 리뷰</title>-->
+<!--        &lt;!&ndash;    제이쿼리 및 부트스트랩    &ndash;&gt;-->
+<!--        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+<!--        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"/>-->
+<!--        <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>-->
+
+<!--        &lt;!&ndash;      meta date      &ndash;&gt;-->
+<!--        <meta property="og:title" content="2호선 뭐먹지?"/>-->
+<!--        <meta property="og:description" content="'2호선 뭐먹지?'에서 맛집을 찾아드립니다."/>-->
+<!--        <meta property="og:image" content="{{ url_for('static', filename='subway.png') }}"/>-->
+
+<!--        &lt;!&ndash;    main css    &ndash;&gt;-->
+<!--        <link rel="stylesheet" href="../static/css/main.css"/>-->
+
+<!--        &lt;!&ndash;    구글폰트    &ndash;&gt;-->
+<!--        <link rel="preconnect" href="https://fonts.googleapis.com">-->
+<!--        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>-->
+<!--        <link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">-->
+
+<!--        <script type="text/javascript">-->
+
+
+
+<!--            function review_create() {-->
+<!--                let score = $('#score').val()-->
+<!--                let reviews = $('#reviews').val()-->
+<!--                let img = $('#hideimg').text()-->
+
+<!--                //날짜 생성 함수-->
+<!--                let today = new Date();-->
+<!--                let year = today.getFullYear();-->
+<!--                let month = ('0' + (today.getMonth() + 1)).slice(-2);-->
+<!--                let day = ('0' + today.getDate()).slice(-2);-->
+<!--                let dateString = year + '-' + month + '-' + day-->
+
+<!--                $.ajax({-->
+<!--                    type: "POST",-->
+<!--                    url: "/api/review_create",-->
+<!--                    data: {-->
+<!--                        shop_give: "{{ word }}",-->
+<!--                        img_give: img,-->
+<!--                        reviews_give: reviews,-->
+<!--                        score_give: score,-->
+<!--                        date_give:dateString-->
+<!--                    },-->
+<!--                    success: function(response) {-->
+<!--                        alert(response["msg"])-->
+<!--                        window.location.reload()-->
+<!--                    }-->
+<!--                })-->
+<!--            }-->
+<!--        </script>-->
+
+<!--    </head>-->
+<!--    <body>-->
+<!--        &lt;!&ndash;  Header  &ndash;&gt;-->
+<!--        <h1 class="logo"><button onclick="location.href='/shop'" id="home" type="button"><i>2호선, 뭐먹지?</i></button></h1>-->
+<!--        <div id="header">-->
+<!--            <div class="nav">-->
+<!--                <button onclick="location.href='/shop/까치산역'" id="line1" type="button">까치산</button>-->
+<!--                <button onclick="location.href='/shop/신도림역'" id="line2" type="button">신도림</button>-->
+<!--                <button onclick="location.href='/shop/사당역'" id="line3" type="button">사당</button>-->
+<!--                <button onclick="location.href='/shop/강남역'" id="line4" type="button">강남</button>-->
+<!--                <button onclick="location.href='/shop/잠실역'" id="line5" type="button">잠실</button>-->
+<!--                <button onclick="location.href='/shop/건대입구역'" id="line6" type="button">건대입구</button>-->
+<!--                <button onclick="location.href='/shop/성수역'" id="line7" type="button">성수</button>-->
+<!--                <button onclick="location.href='/shop/신설동역'" id="line8" type="button">신설동</button>-->
+<!--                <button onclick="location.href='/shop/왕십리역'" id="line9" type="button">왕십리</button>-->
+<!--                <button onclick="location.href='/shop/신당역'" id="line10" type="button">신당</button>-->
+<!--                <button onclick="location.href='/shop/을지로4가역'" id="line11" type="button">을지로4가</button>-->
+<!--                <button onclick="location.href='/shop/시청역'" id="line12" type="button">시청</button>-->
+<!--                <button onclick="location.href='/shop/홍대입구역'" id="line13" type="button">홍대입구</button>-->
+<!--                <button onclick="location.href='/shop/영등포구청역'" id="line14" type="button">영등포구청</button>-->
+<!--                <button onclick="location.href='/my/reviews'" id="my_info" type="button">내 정보</button>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--        &lt;!&ndash;    Review    &ndash;&gt;-->
+<!--        <div id="review">-->
+<!--            &lt;!&ndash;      해당 식당 정보창      &ndash;&gt;-->
+<!--            {% for table in shop %}-->
+<!--                 {% if table.name == word %}-->
+<!--                    {% set shop_image = table.img_url %}-->
+<!--                    {% set shop_name = table.name %}-->
+<!--                    {% set shop_address = table.address %}-->
+<!--                    {% set shop_like = table.like %}-->
+<!--                    <div class="card">-->
+<!--                        <p id="hideimg" style="display: none">{{ shop_image }}</p>-->
+<!--                        <img src="{{ shop_image }}" alt="">-->
+<!--                        <p class="name">{{ shop_name }}</p>-->
+<!--                        <p class="place">{{ shop_address }}</p>-->
+<!--                        <p class="point">평점 : {{ shop_like }}</p>-->
+<!--                    </div>-->
+<!--                 {% endif %}-->
+<!--            {% endfor %}-->
+<!--            &lt;!&ndash;     리뷰 및 작성창       &ndash;&gt;-->
+<!--            <div class="card review_box" style="height: 290px">-->
+<!--                {% for page in review %}-->
+<!--                    {% if page.shop == word %}-->
+<!--                        {% set review_score = page.score %}-->
+<!--                        {% set review_review = page.reviews %}-->
+<!--                        {% set review_date = page.date %}-->
+<!--                        <div class="review_text">-->
+<!--                            <h3 class="rn">닉네임</h3>-->
+<!--                            <p class="rp">{{ review_score }}점</p>-->
+<!--                            <p class="rt">{{ review_review }}</p>-->
+<!--                            <p class="rd">{{ review_date }}</p>-->
+<!--                        </div>-->
+<!--                    {% endif %}-->
+<!--                {% endfor %}-->
+<!--                <p style="font-size: 12px; color: #777">리뷰 및 점수를 입력해주세요</p>-->
+<!--                <input id="reviews" type="text">-->
+<!--                <input id="score" type="number" min="1" max="5">-->
+<!--                <button onclick="review_create()" type="button" id="r_btn">저 장</button>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--    </body>-->
+<!--</html>-->
+
+<!-- review 파일로 대체하였습니다. -->
