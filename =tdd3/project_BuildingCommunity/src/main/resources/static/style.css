@@ -1,0 +1,335 @@
+
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+
+body {
+    margin: 0px;
+
+}
+
+.background-header {
+    position: fixed;
+    z-index: -1;
+    top: 0px;
+    width: 100%;
+    height: 800px;
+    background-color: #ADD8E6;
+
+}
+.background-body {
+    position: fixed;
+    z-index: -1;
+    top: 703px;
+    height: 100%;
+    width: 100%;
+    background-color: #808080;
+}
+.background-headerimg{
+    position: fixed;
+    z-index: -1;
+    top: 0px;
+    width: 100%;
+    height: 800px;
+    background-image: url("images/building3.png");
+    background-repeat: no-repeat;
+    background-size: 30% 77%;
+    background-position: right top;
+    background-attachment: fixed;
+    background-color: transparent;
+}
+.background-headertitle{
+    margin-top: 240px;
+    margin-left: 30px;
+    transition: color 0.5s;
+    cursor: pointer;
+    color: #ffffff;
+    transition: color 0.5s ease-in-out;
+}
+.background-headertitle:hover{
+    color: #424242;
+}
+.background-headertitle h2 {
+    /*font-family: 'Noto Sans KR', sans-serif;*/
+    display: block;
+    width: 10px;
+    height: 33px;
+    font-size: 80px;
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 0.79;
+    letter-spacing: -0.5px;
+    text-align: left;
+    margin-left: 20px;
+}
+.fix-wrap{
+    display: flex;
+}
+.wrap {
+    display: block;
+    width: 538px;
+    margin: 10px 700px;
+    padding: 30px;
+}
+.header {
+    margin-top: 50px;
+}
+
+.header p {
+    margin: 0px auto 80px;
+    width: 450px;
+    height: 48px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: -1.12px;
+    text-align: center;
+    color: #424242;
+}
+
+
+#see-area, #search-area {
+    display: block;
+    width: 538px;
+    margin: 10px auto;
+}
+.area-write {
+    position: relative;
+    width: 538px;
+}
+.mb-3-row{
+    margin-bottom: 13px;
+}
+.field{
+    width: 200px;
+    height: 20px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    border: none;
+    resize: none;
+    box-shadow: 2px 2px 2px 2px grey;
+}
+#contents {
+    width: 538px;
+}
+
+textarea.field {
+    margin-top: 12px;
+    width: 502px !important;
+    height: 146px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    border: none;
+    padding: 18px;
+    resize: none;
+    box-shadow: 2px 2px 2px 2px grey;
+}
+
+.field::placeholder {
+    width: 216px;
+    height: 16px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: -0.96px;
+    text-align: left;
+    color: #868e96;
+}
+
+.wrap button{
+    width: 538px;
+    color: #ffffff;
+    font-size: large;
+    background-color: #868e96;
+    margin: 10px auto;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 2px 2px 2px 2px grey;
+    transition: background-color 0.5s ease-in-out;
+    cursor: pointer;
+}
+.wrap button:hover{
+    background-color: #424242;
+}
+.nav {
+    width: 300px;
+    margin: 30px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
+    color: #868e96;
+    background-color: #ffffff;
+    font-size: large;
+    padding: 10px;
+    box-shadow: 2px 2px 2px 2px grey;
+    transition: color 0.5s ease-in-out,
+            background-color 0.5s ease-in-out;
+}
+.nav:hover{
+    color: #ffffff;
+    background-color: #424242;
+}
+
+.nav div.nav-see{
+    cursor: pointer;
+}
+.modal div.modal-search{
+    cursor: pointer;
+}
+
+.nav div.nav-see.active {
+    font-weight: 1000;
+
+}
+.modal div.modal-search.active {
+    font-weight: 1000;
+}
+
+#see-area {
+    width: 538px;
+    margin: 10px auto;
+}
+.area-read {
+    width: 538px;
+}
+.card {
+    width: 538px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    margin-bottom: 12px;
+    box-shadow: 2px 2px 2px 2px grey;
+}
+
+.card .metadata {
+    position: relative;
+    display: flex;
+    font-family: 'Spoqa Han Sans';
+    font-size: 13px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: -0.77px;
+    text-align: left;
+    color: #424242;
+    height: 14px;
+    padding: 17px 30px;
+}
+
+.card .metadata .date {
+
+}
+
+.card .metadata .username {
+    margin-left: 20px;
+    color: darkblue;
+}
+
+.title {
+    font-size: 20px;
+    color: #424242;
+    padding: 0px 23px;
+    word-wrap: break-word;
+    word-break: break-all;
+    font-weight: bold;
+}
+
+.modal{
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    color: #808080;
+    line-height: 1;
+    letter-spacing: -0.77px;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 5px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    transition: background-color 0.5s ease-in-out,
+                color 0.5s ease-in-out;
+}
+.modal:hover{
+    color: #ffffff;
+    background-color: #808080;
+}
+
+.popup-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-container.active {
+    display: flex;
+}
+
+.popup {
+    padding: 20px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    width: 420px;
+    height: 190px;
+    border-radius: 11px;
+    background-color: #ffffff;
+}
+
+.popup .metadata {
+    line-height: 1;
+    letter-spacing: -1.1px;
+}
+
+.popup .metadata div{
+    margin-bottom: 8px;
+}
+.popup_title{
+    font-size: 25px;
+    font-weight: bold;
+    color: #212121;
+}
+.popup_username{
+    font-size: 15px;
+    color: darkblue;
+    font-weight: bold;
+}
+.popup_date{
+    font-size: 15px;
+    color: #212121;
+}
+
+.popup .contents {
+    width: 395px;
+    height: 100px;
+    border-radius: 2px;
+    border: solid 3px #dee2e6;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.popup button.close {
+    position: absolute;
+    cursor: pointer;
+    top: 15px;
+    right: 15px;
+    color: #adb5bd;
+    background-color: #fff;
+    font-size: 19px;
+    border: none;
+}
+.none {
+    display: none;
+}
